@@ -1,0 +1,65 @@
+﻿@page
+@model StudentManagement.Pages.StudentDetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.DOB)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.DOB)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Department)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Department)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.student.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.student.Address)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a class="m-lg-2 btn btn-secondary btn-sm active btn-outline-dark text-white bg-dark" role="button" aria-pressed="true" asp-page="./EditStudent" asp-route-id="@Model.student.ID">Edit</a> |
+    <a class="m-lg-2 btn btn-secondary btn-sm active btn-outline-dark text-white bg-dark" role="button" aria-pressed="true" asp-page="./StudentIndex">Back to List</a>
+</div>
+

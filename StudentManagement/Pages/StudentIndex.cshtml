@@ -1,0 +1,66 @@
+﻿@page
+@model StudentManagement.Pages.StudentIndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Index</h2>
+<p>
+    <a asp-page="CreateStudent">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].Department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.student[0].CreateDate)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.student)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+
+                <td>
+                    <a class="btn btn-secondary btn-sm active btn-outline-dark text-white bg-dark" role="button" aria-pressed="true" asp-page="./EditStudent" asp-route-id="@item.ID">Edit</a> |
+                    <a class="btn btn-secondary btn-sm active btn-outline-dark text-white bg-dark" role="button" aria-pressed="true" asp-page="./StudentDetails" asp-route-id="@item.ID">Details</a> |
+                    <a class="btn btn-secondary btn-sm active btn-outline-dark text-white bg-dark" role="button" aria-pressed="true" asp-page="./DeleteStudent" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
